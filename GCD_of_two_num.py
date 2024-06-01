@@ -1,10 +1,15 @@
-num1=23
-num2=24
-num3=35
-if (num1>=num2) and (num1>=num3):
-    largest=num1
-elif (num2>=num1) and (num2>=num3):
-    largest=num2
-else:
-    largest=num3
-    print(largest)
+def computeGcd(x, y):
+    if x > y:
+        smaller = y
+    else:
+        smaller = x
+        
+    for i in range(1, smaller + 1):
+        if (x % i == 0) and (y % i == 0):
+            gcd = i
+    return gcd
+
+# Example usage:
+num1 = int(input("Enter the first number: "))
+num2 = int(input("Enter the second number: "))
+print("The GCD of", num1, "and", num2, "is", computeGcd(num1, num2))
